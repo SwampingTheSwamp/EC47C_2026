@@ -3,7 +3,8 @@
 # Contributors
 
 André Luiz da Silva Junior <br>
-Otavio Felicio
+Otavio Felicio <br>
+Leonardo Silveira Gomes
 
 
 ## Descrição

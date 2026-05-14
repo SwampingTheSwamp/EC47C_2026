@@ -1,0 +1,99 @@
+body {
+  background-color: #a8d3f1;
+}
+
+
+.arimo_titles {
+  font-family: "Arimo", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.eb_garamond_text {
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  color: #5244ef;
+  text-decoration: none;
+}
+
+a:hover {
+    color:#1e3683;
+  text-decoration: underline;
+}
+
+.nome_completo {
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  text-shadow: #355872 3px 2px 3px;
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.foto_perfil {  
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.texts {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.25;
+  margin: 20px;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.figure_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}   
+
+
+h2 {
+  font-family: "Arimo", sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-top: 20px;
+  background-color: #7AAACE;
+}
+
+.odsfigure {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.divods {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+li {
+   font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  line-height: 0.5;
+  margin: 15px;
+}
+
+
+.formacao {
+  font-family: "Arimo", sans-serif;
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0em 0.5em 0.5em 0em;
+}
