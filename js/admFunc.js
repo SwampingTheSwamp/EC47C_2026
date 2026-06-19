@@ -96,3 +96,71 @@ function excluirTodos() {
         renderizarLista();
     }
 }
+function renderizarLista(termoBusca = "", campoBusca = "nome") {
+    const listaUsuarios = document.getElementById("listaUsuarios");
+    listaUsuarios.innerHTML = "";
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    if (usuarios.length === 0) {
+        listaUsuarios.innerHTML = "<li>Nenhum usuário cadastrado no sistema.</li>";
+        return;
+    }
+
+    let encontrouAlguem = false;
+
+    usuarios.forEach((usuario, originalIndex) => {
+        // Pega o valor do campo específico que o usuário escolheu no HTML
+        // Exemplo: se campoBusca for "perfil", ele pega usuario["perfil"]
+        const valorDoCampo = (usuario[campoBusca] || "").toLowerCase();
+        const busca = termoBusca.toLowerCase();
+
+        // Verifica se o texto digitado existe apenas dentro do campo selecionado
+        if (valorDoCampo.includes(busca)) {
+            encontrouAlguem = true;
+            const dataExibicao = usuario.dataEnvio ? usuario.dataEnvio : "Data não registrada";
+
+            const li = document.createElement("li");
+            // Adicionei o Perfil na exibição para ficar mais fácil ver que o filtro funcionou!
+            li.innerHTML = `
+                <strong>Data:</strong> ${dataExibicao} | 
+                <strong>Nome:</strong> ${usuario.nome} | 
+                <strong>E-mail:</strong> ${usuario.email} | 
+                <strong>Perfil:</strong> ${usuario.perfil}
+                <button onclick="excluirItem(${originalIndex})" style="margin-left: 15px; background-color: #f0ad4e; padding: 5px 10px; font-size: 0.8em; border: none; border-radius: 4px; cursor: pointer;">Excluir</button>
+            `;
+            
+            listaUsuarios.appendChild(li);
+        }
+    });
+
+    if (!encontrouAlguem) {
+        listaUsuarios.innerHTML = "<li>Nenhum usuário encontrado para este critério.</li>";
+    }
+}
+
+// Função chamada pelo botão "Encontrar"
+function pesquisarUsuario() {
+    const termo = document.getElementById("inputPesquisa").value;
+    const campo = document.getElementById("campoPesquisa").value; // Lê o que foi selecionado
+    renderizarLista(termo, campo);
+}
+
+// Função chamada pelo botão "Limpar"
+function limparPesquisa() {
+    document.getElementById("inputPesquisa").value = "";
+    document.getElementById("campoPesquisa").value = "nome"; // Volta pro padrão
+    renderizarLista(); // Renderiza a lista completa novamente
+}
+// Função para mostrar ou esconder o menu de pesquisa
+function togglePesquisa() {
+    const container = document.getElementById("containerPesquisa");
+    
+    // Se estiver escondido, mostra. Se estiver visível, esconde.
+    if (container.style.display === "none") {
+        container.style.display = "flex";
+    } else {
+        container.style.display = "none";
+        limparPesquisa(); // Limpa a busca automaticamente ao fechar a caixa
+    }
+}
