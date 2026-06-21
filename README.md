@@ -15,8 +15,10 @@ Projeto desenvolvido para a disciplina de Programação Web Front-End da Univers
 A ideia do projeto é contribuir para a democratização do acesso à informação e incentivar o desenvolvimento educacional da comunidade.
 
 ## Objetivo
-
+- Projeto 01
 Desenvolver uma interface web simples, intuitiva e acessível, aplicando os conceitos de HTML e CSS estudados em sala de aula.
+- Projeto 02
+Desenvolver o cadastro e a exclusão do usuário utilizado os conceitos de Javascript com local host.
 
 ## Público-alvo
 
@@ -35,4 +37,5 @@ Este projeto está alinhado com o **ODS 4 – Educação de Qualidade**, que bus
 - Página principal com conteúdos e informações educacionais
 - Navegação entre páginas
 - Layout responsivo e organizado
+- Cadastro local
 
